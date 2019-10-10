@@ -3,7 +3,7 @@ import { Router, Route } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-eligible',
   templateUrl: './eligible.component.html',
@@ -68,7 +68,7 @@ loanAmount: number;
       };
 
       console.log(reqObj);
-    this.http.post('http://10.117.189.192:8082/mortgage/api/loanInfo', reqObj).subscribe((response) => {
+    this.http.post(environment.baseUrl + '/mortgage/api/loanInfo', reqObj).subscribe((response) => {
         if (response) {
             this.data = response;
 
@@ -120,7 +120,7 @@ loanAmount: number;
     };
 
     console.log(reqObj1);
-  this.http.post('http://10.117.189.134:8082/mortgage/api/loan', reqObj1).subscribe((response) => {
+  this.http.post(environment.baseUrl + '/mortgage/api/loan', reqObj1).subscribe((response) => {
       if (response) {
           this.loanInfo = response;
           alert(response['message'])
