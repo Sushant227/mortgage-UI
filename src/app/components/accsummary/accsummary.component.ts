@@ -16,10 +16,9 @@ interface Data2 {
   styleUrls: ['./accsummary.component.css'] })
 export class AccsummaryComponent implements OnInit {
   customerId: any;
-  router: any;
   data2: any = '';
   constructor(private router: Router,
-      private route:Router,
+    private route:Router,
     private http: HttpClient) { }
  
   ngOnInit() {
