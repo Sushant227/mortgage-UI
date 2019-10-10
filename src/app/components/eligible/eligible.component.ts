@@ -30,6 +30,7 @@ loanAmount: number;
   constructor(
       private formBuilder: FormBuilder,
       private router: Router,
+      private route:Router,
       private http:HttpClient
   ) { 
   }
