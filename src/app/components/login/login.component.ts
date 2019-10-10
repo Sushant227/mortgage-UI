@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Route } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 // import { AlertService, AuthenticationService } from '../_services';
 
 export class User {
@@ -68,7 +69,7 @@ export class LoginComponent implements OnInit {
         };
 
         this.http
-            .post("http://10.117.189.192:8082/mortgage/api/login", this.loginForm.value)
+            .post(environment.baseUrl + '/mortgage/api/login', this.loginForm.value)
             .subscribe((res: Response) => {
                 console.log(res);
                 alert(res['message'])
