@@ -1,0 +1,23 @@
+<!-- Logout Button -->
+<button (click)="logout()" class="btn btn-link" style="float: right;color: blue;">Logout</button>
+<!-- Logout Button -->
+<div class="container" style="margin-top: 3em;">
+    <p-tabView>
+        <p-tabPanel header="Account Summary">
+            
+            <!-- Summary Page -->
+            <app-accsummary></app-accsummary>
+            <!-- Summary Page -->
+        </p-tabPanel>
+        <p-tabPanel header="Loan Account Details">
+            <!-- Loan Summary Page -->
+           <app-loansummary></app-loansummary>
+           <!-- Loan Summary Page -->
+        </p-tabPanel>
+        <p-tabPanel header="Apply For Loan">
+            <!-- ApplyLoan Page -->
+            <app-eligible></app-eligible>
+            <!-- ApplyLoan Page -->
+        </p-tabPanel>
+    </p-tabView>
+</div>

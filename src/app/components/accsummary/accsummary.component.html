@@ -1,0 +1,25 @@
+<!-- Summary Page -->
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h6>Summary</h6>
+            </div>
+
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="ui-g" *ngIf="this.data2!=''">
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <h6><b>Customer Name:</b> {{this.data2.customerName}}</h6>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <h6><b>Account Number:</b> {{this.data2.accountNumber}}</h6>
+            </div>
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <h6><b>Balance:</b> {{this.data2.accountBalance}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Summary Page -->

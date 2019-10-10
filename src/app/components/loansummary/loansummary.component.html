@@ -1,0 +1,39 @@
+<!-- Loan Summary Page -->
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h6>Loan Account Summary</h6>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="ui-g" *ngIf="this.data3 == 'No loan info found for the customer'">
+            <h6 style="color:red;">{{this.data3}}</h6>
+        </div>
+        <div class="ui-g" *ngIf="this.data3 !='' && this.data3 != 'No loan info found for the customer'">
+                    <div class=" ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>Account Number:</b> {{this.data3.accountNumber}}</h6>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>Total Amount:</b> {{this.data3.totalAmount}}</h6>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>Loan Amount:</b> {{this.data3.loanAmount}}</h6>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>Loan Tenure:</b> {{this.data3.loanTenure}}</h6>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>Rate Of Interest:</b> {{this.data3.rateOfInterest}}</h6>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-lg-4">
+            <h6><b>EMI:</b> {{this.data3.emi}}</h6>
+        </div>
+    </div>
+</div>
+
+<!-- Loan Summary Page -->
