@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router , Route} from '@angular/router';
 // import { AccsummaryComponent } from '../accsummary/accsummary.component';
 
 @Component({
