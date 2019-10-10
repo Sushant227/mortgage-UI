@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 interface Data3 {
   accountNumber: number;
@@ -24,7 +25,7 @@ export class LoansummaryComponent implements OnInit {
 
   ngOnInit() {
     this.customerId = sessionStorage.getItem("customerId");
-    this.http.get(`http://10.117.189.134:8082/mortgage/api/loans/${this.customerId}/summary`).subscribe((response) => {
+    this.http.get(environment.baseUrl + `/mortgage/api/loans/${this.customerId}/summary`).subscribe((response) => {
       if (response) {
         this.data3 = response;
         return this.data3;
