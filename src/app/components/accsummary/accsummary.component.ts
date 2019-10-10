@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Route } from '@angular/router';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -18,7 +18,8 @@ export class AccsummaryComponent implements OnInit {
   customerId: any;
   router: any;
   data2: any = '';
-  constructor(private route: Router,
+  constructor(private router: Router,
+      private route:Router,
     private http: HttpClient) { }
  
   ngOnInit() {
