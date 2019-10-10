@@ -3,7 +3,7 @@ import { Router, Route } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
          "mobileNumber" :this.registerForm.value.mobileNumber,
          "dob" : this.date
       };
-    this.http.post('http://10.117.189.134:8082/mortgage/api/register', reqObj).subscribe((response) => {
+    this.http.post(environment.baseUrl + '/mortgage/api/register', reqObj).subscribe((response) => {
         if (response) {
             this.data = response;
             alert(response['message'])
