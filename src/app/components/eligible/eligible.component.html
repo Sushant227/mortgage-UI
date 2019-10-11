@@ -81,15 +81,17 @@
 
 <!-- Dilogue Content -->
    <div class="content-section implementation">
-    <p-dialog header="Confirm" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '500px', minWidth: '200px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+    <p-dialog header="Confirmation" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '500px', minWidth: '200px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
              <div>
-                 
-                 Emi: {{this.data.emi}}<br/>
+                 <p>You are eligible for {{this.data.totalAmount}} @ ROI {{this.data.rateOfInterest}}%. Your EMI is {{this.data.emi}}. </p>
+                 <!-- Emi: {{this.data.emi}}<br/>
                  Rate Of Interest: {{this.data.rateOfInterest}}<br/>
-                 Total Amount: {{this.data.totalAmount}}
+                 Total Amount: {{this.data.totalAmount}} -->
+                 <br/>
+                 <p>Please provide your confirmation by clicking Apply.</p>
             </div>
            <p-footer>
-               <button type="button" pButton (click)="applyLoan()" label="Confirm"></button>
+               <button type="button" pButton (click)="applyLoan()" label="Apply"></button>
                <button type="button" pButton (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
            </p-footer>
     </p-dialog>
