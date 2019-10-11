@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+
 @Component({
   selector: 'app-eligible',
   templateUrl: './eligible.component.html',
@@ -74,7 +75,13 @@ loanAmount: number;
             this.data = response;
 
             alert(response['message']);
+            if(response['message'] == "Loan Applied Successfully"){
+
               this.showDialog();
+            }
+            else{
+              this.route.navigate(['/loansummary']);
+            }
               // this.propertyValue = this.data.propertyValue;
               // this.propertyType = this.data.propertyType;
               // this.loanTenure = this.data.loanTenure;
@@ -83,6 +90,8 @@ loanAmount: number;
               
               // this.route.navigate(['/login']);
               console.log(this.data);
+              sessionStorage.setItem("totalAmount", response['totalAmount']);
+              sessionStorage.setItem("emi", response['emi']);
              
               
         };(err) => {
@@ -112,8 +121,8 @@ loanAmount: number;
   applyLoan(){
     var reqObj1 = {
       "customerId" : sessionStorage.getItem("customerId"),
-       "totalAmount": this.checkForm.value.totalAmount,
-       "emi": this.checkForm.value.emi,
+      "totalAmount" : sessionStorage.getItem("totalAmount"),
+      "emi": sessionStorage.getItem("emi"),
        "loanAmount" : this.checkForm.value.loanAmount,
        "loanTenure" : this.checkForm.value.loanTenure,
        "propertyType" : this.checkForm.value.propertyType,
@@ -131,9 +140,13 @@ loanAmount: number;
             this.loanTenure = this.data.loanTenure;
             this.propertyType = this.data.propertyType;
             this.propertyValue = this.data.propertyValue;
-
-            // this.route.navigate(['/login']);
             console.log(this.loanInfo);
+            // then reset the form
+            this.reset();
+            this.route.navigate(['/loansummary']);
+            
+        
+            
       };(err) => {
         this.loanInfo = err.error.message;
         console.log(err.error.message);
@@ -144,4 +157,7 @@ loanAmount: number;
       
     });
   }
+  reset() {
+        this.checkForm.reset();
+    }
 }
