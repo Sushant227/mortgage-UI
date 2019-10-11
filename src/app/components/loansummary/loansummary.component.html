@@ -1,6 +1,6 @@
 <!-- Loan Summary Page -->
 
-<div class="card">
+<div class="card container">
     <div class="card-header">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -16,7 +16,7 @@
         </div>
         <div class="ui-g" *ngIf="this.data3 !='' && this.data3 != 'No loan info found for the customer'">
                     <div class=" ui-g-12 ui-md-6 ui-lg-4">
-            <h6><b>Account Number:</b> {{this.data3.accountNumber}}</h6>
+            <h6><b>Account Number:</b> {{this.data3.loanAccountNumber}}</h6>
         </div>
         <div class="ui-g-12 ui-md-6 ui-lg-4">
             <h6><b>Total Amount:</b> {{this.data3.totalAmount}}</h6>
