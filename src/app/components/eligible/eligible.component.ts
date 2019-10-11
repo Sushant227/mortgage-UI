@@ -75,7 +75,7 @@ loanAmount: number;
             this.data = response;
 
             alert(response['message']);
-            if(response['message'] == "Loan Applied Successfully"){
+            if(response['message'] == "Enquiry Successfull"){
 
               this.showDialog();
             }
