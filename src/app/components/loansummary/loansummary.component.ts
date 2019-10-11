@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, Route} from '@angular/router';
+import { Router, Route } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 interface Data3 {
@@ -21,7 +21,7 @@ export class LoansummaryComponent implements OnInit {
   customerId: string;
   data3: Object = '';
   constructor(private router: Router,
-      private route:Router,
+    private route:Router,
     private http: HttpClient) { }
 
   ngOnInit() {
