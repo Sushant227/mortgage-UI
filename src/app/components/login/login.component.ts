@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     data1: any;
     loginId: any;
     password: any;
-
+    err=false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -72,11 +72,12 @@ export class LoginComponent implements OnInit {
             .post(environment.baseUrl + '/mortgage/api/login', this.loginForm.value)
             .subscribe((res: Response) => {
                 console.log(res);
-                alert(res['message'])
+                // alert(res['message'])
                 sessionStorage.setItem("customerId", res['customerId']);
                 this.route.navigate(['/dashboard']);
 
             }, (err) => {
+                this.err=true;
                 console.log("rerror",err)
                 alert(err.message);
             });
