@@ -1,6 +1,7 @@
 
 <!-- Eligibility Form -->
 <!-- <h6 style="color:red;">{{this.data3}}</h6> -->
+
 <div class="card">
         <div class="card-header">Eligibility Check</div>
         <div class="card-body">
@@ -71,7 +72,7 @@
                     <button [disabled]="loading" (click)="showDialog()" class="btn btn-primary">Apply</button>
                     <img *ngIf="loading"
                         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                    <a [routerLink]="['/dashboard']" class="btn btn-link">Cancel</a>
+                    <a [routerLink]="['/dashboard']" class="btn btn-link" (click)="reset()">Cancel</a>
                 </div>
             </form>
             <!-- Eligibility check Form -->
@@ -83,7 +84,7 @@
    <div class="content-section implementation">
     <p-dialog header="Confirmation" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '500px', minWidth: '200px'}" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
              <div>
-                 <p>You are eligible for {{this.data.totalAmount}} @ ROI {{this.data.rateOfInterest}}%. Your EMI is {{this.data.emi}}. </p>
+                 <p>You are eligible for a loan amount of {{this.data.loanAmount}} @ ROI {{this.data.rateOfInterest}}%. Your EMI is {{this.data.emi}}. </p>
                  <!-- Emi: {{this.data.emi}}<br/>
                  Rate Of Interest: {{this.data.rateOfInterest}}<br/>
                  Total Amount: {{this.data.totalAmount}} -->
